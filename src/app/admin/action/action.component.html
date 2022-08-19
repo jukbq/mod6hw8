@@ -1,0 +1,73 @@
+<section>
+
+
+    <button (click)="action_form= !action_form" class="btn " data-rel="address" type="button">ДОДАТИ АКЦІЮ</button>
+    <table [ngClass]="{'active': action_form}" class="table">
+        <thead>
+
+            <tr>
+
+                <th scope="col">Дата</th>
+                <th scope="col">Назва</th>
+                <th scope="col">Заголовок</th>
+                <th scope="col">Опис</th>
+                <th scope="col">Картинка</th>
+                <th scope="col">Дії</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let actions of actions; let i= index">
+                <td>{{actions.data}}</td>
+                <td>{{ actions.name }}</td>
+                <td>{{ actions.title }}</td>
+                <td>{{ actions.description }}</td>
+                <td class="image">
+                    <img [src]="actions.images">
+                </td>
+                <td class="btn_tr">
+                    <a (click)="editAction(actions)" type="button">Редагувати</a>
+                    <a (click)="delAction(actions)" type="button">Видалити</a></td>
+            </tr>
+
+        </tbody>
+    </table>
+
+    <div class="form_conteiner" [ngClass]="{'active': !action_form}">
+        <form [formGroup]="actionForn" (ngSubmit)="creatAction()" class="form_action">
+            <div class="top_input">
+                <input formControlName="name" type="text" name="name" class="form-control" placeholder="*Назва" aria-label="Назва">
+                <input formControlName="title" type="text" name="title" class="form-control" placeholder="*Заголовок" aria-label="Заголовок">
+            </div>
+            <div class="form-floating">
+                <textarea formControlName="description" class="form-control" name="description" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+                <label for="floatingTextarea2">*Опис</label>
+            </div>
+
+            <div class="load_file">
+                <input class="form-control form-control-lg" type="file" (change)="upload($event)">
+            </div>
+
+            <div class="progress_line">
+                <div class="progress">
+                    <div class="progress-bar progress-bar-striped" role="progressbar" aria-label="Default striped example" [style.width.%]="uploadPercent" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+            </div>
+
+            <button [disabled]="actionForn.invalid" type="submit" class="btn">
+                {{ edit_status ? 'Зберегти' : 'ДОадати'}}
+            </button>
+        </form>
+
+
+        <div class="image_block">
+            <td class="image">
+                <img [src]="valueByControl('images')">
+            </td>
+            <button (click)="deleteImage()" type="submit" class="btn">
+                Видалити
+            </button>
+        </div>
+    </div>
+
+
+</section>

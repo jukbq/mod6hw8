@@ -1,0 +1,217 @@
+a {
+  font-size: 14px;
+  line-height: 1em;
+  font-weight: bold;
+  color: #252525;
+}
+
+header {
+  width: 100vw;
+  min-height: 110px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-around;
+  background-color: #fff;
+}
+header .logo {
+  width: 12%;
+  min-height: 110px;
+  display: flex;
+  justify-content: center;
+  background-color: #b5d8f7;
+  cursor: pointer;
+  padding: 0 20px;
+}
+header .menu {
+  width: 78%;
+  min-height: 110px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+header .menu ul {
+  position: relative;
+  display: flex;
+}
+header .menu ul li {
+  width: 100px;
+  height: 100%;
+}
+header .menu ul li a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  list-style: none;
+  text-align: center;
+}
+header .menu ul li a img {
+  margin-bottom: 5px;
+}
+header .menu .wrap_menu {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  z-index: 1;
+}
+header .menu .wrap_menu .btn {
+  position: relative;
+  width: 50px;
+  height: 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  transition-duration: 0.5s;
+  border: none;
+  z-index: 2;
+}
+header .menu .wrap_menu .btn .line {
+  transition-duration: 0.5s;
+  height: 4px;
+  width: 30px;
+  background-color: #212121;
+}
+header .menu .wrap_menu .btn.active {
+  transition-duration: 0.5s;
+  background: transparent;
+  border: none;
+}
+header .menu .wrap_menu .btn.active :nth-child(1) {
+  transform: rotateZ(45deg) scaleX(1.25) translate(6.5px, 6.5px);
+}
+header .menu .wrap_menu .btn.active :nth-child(2) {
+  opacity: 0;
+}
+header .menu .wrap_menu .btn.active :nth-child(3) {
+  transform: rotateZ(-45deg) scaleX(1.25) translate(6px, -6px);
+}
+header .menu .wrap_menu .burger_menu {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  z-index: 1;
+  left: -20px;
+  top: -90px;
+  padding: 100px 35px 5px 35px;
+  background: #fff;
+  border: 2px solid #b5d8f7;
+  border-radius: 10px;
+  transition: 0.5s;
+}
+header .menu .wrap_menu .burger_menu li {
+  min-width: 180px;
+  white-space: nowrap;
+  text-align: left;
+  justify-content: left;
+}
+header .menu .wrap_menu .burger_menu li a {
+  padding: 12px 0px;
+  text-align: left;
+  align-items: flex-start;
+}
+header .menu .wrap_menu .burger_menu li:hover {
+  border: 0.8px solid #b5d8f7;
+  border-radius: 10px;
+}
+header .menu .wrap_menu .activeBurgher {
+  opacity: 1;
+  visibility: visible;
+  top: -30px;
+}
+header .menu .call_back {
+  height: 50px;
+  border: none;
+  border-radius: 10px;
+  margin-left: 50px;
+  background: #b5d8f7;
+}
+header .menu .call_back:hover {
+  background: none;
+  border: 1px solid #b5d8f7;
+}
+header .menu .call_back span {
+  line-height: 1em;
+  font-weight: bold;
+  font-size: 12px;
+  color: #252525;
+  vertical-align: middle;
+  padding-left: 5px;
+}
+header .menu .kontact_ibfo {
+  text-align: center;
+}
+header .menu .kontact_ibfo a {
+  font-size: 16px;
+}
+header .menu .kontact_ibfo header-work-time {
+  font-size: 12px;
+  line-height: 1em;
+}
+header .menu .header_user {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header .header_basket {
+  width: 10%;
+  min-height: 110px;
+  display: flex;
+  justify-content: center;
+  background-color: #b5d8f7;
+  cursor: pointer;
+  padding: 0 20px;
+}
+
+.border_animation {
+  border-radius: 5px;
+  background-repeat: no-repeat;
+}
+.border_animation:hover {
+  background-image: linear-gradient(to right, #b5d8f7 100%, #b5d8f7 100%), linear-gradient(to bottom, #b5d8f7 100%, #b5d8f7 100%), linear-gradient(to right, #b5d8f7 100%, #b5d8f7 100%), linear-gradient(to bottom, #BFE2FF 100%, #BFE2FF 100%);
+  background-size: 100% 2px, 2px 100%, 100% 2px, 2px 100%;
+  background-position: 0 0, 100% 0, 100% 100%, 0 100%;
+  -webkit-animation: anim-border 0.8s cubic-bezier(0.19, 1, 0.22, 1) 1;
+          animation: anim-border 0.8s cubic-bezier(0.19, 1, 0.22, 1) 1;
+}
+
+@-webkit-keyframes anim-border {
+  0% {
+    background-size: 0 2px, 2px 0, 0 2px, 2px 0;
+  }
+  25% {
+    background-size: 100% 2px, 2px 0, 0 2px, 2px 0;
+  }
+  50% {
+    background-size: 100% 2px, 2px 100%, 0 2px, 2px 0;
+  }
+  75% {
+    background-size: 100% 2px, 2px 100%, 100% 2px, 2px 0;
+  }
+  100% {
+    background-size: 100% 2px, 2px 100%, 100% 2px, 2px 100%;
+  }
+}
+
+@keyframes anim-border {
+  0% {
+    background-size: 0 2px, 2px 0, 0 2px, 2px 0;
+  }
+  25% {
+    background-size: 100% 2px, 2px 0, 0 2px, 2px 0;
+  }
+  50% {
+    background-size: 100% 2px, 2px 100%, 0 2px, 2px 0;
+  }
+  75% {
+    background-size: 100% 2px, 2px 100%, 100% 2px, 2px 0;
+  }
+  100% {
+    background-size: 100% 2px, 2px 100%, 100% 2px, 2px 100%;
+  }
+}

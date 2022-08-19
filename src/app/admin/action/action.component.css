@@ -1,0 +1,115 @@
+section {
+  width: 100vw;
+  padding: 20px 40px;
+}
+section .btn {
+  border: 2px solid #b5d8f7;
+  background: #fff;
+  transition: 0.35s;
+  text-transform: uppercase;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: bold;
+  padding: 16px 22px;
+}
+section .btn:hover {
+  background: #b5d8f7;
+}
+section .table {
+  width: 90%;
+  margin-top: 20px;
+}
+section .table thead tr {
+  border-bottom: 2px solid #b5d8f7;
+}
+section .table.active {
+  display: none;
+}
+section .table tbody tr .image {
+  width: 80px;
+  height: 70px;
+  overflow: hidden;
+}
+section .table tbody tr .image img {
+  height: 100%;
+}
+section .table tbody tr .btn_tr {
+  width: 40px;
+  display: flex;
+  flex-direction: column;
+}
+section .table tbody tr .btn_tr a {
+  text-decoration: none;
+  color: #b5d8f7;
+  font-size: 18px;
+  font-weight: 500;
+}
+section .form_conteiner {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+section .form_conteiner.active {
+  display: none;
+}
+section .form_conteiner .form_action {
+  width: 48%;
+  height: 400px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  margin-top: 20px;
+}
+section .form_conteiner .form_action .top_input {
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+section .form_conteiner .form_action .top_input input {
+  width: 48%;
+  height: 54px;
+}
+section .form_conteiner .form_action .form-floating,
+section .form_conteiner .form_action .load_file {
+  margin-bottom: 30px;
+}
+section .form_conteiner .form_action .progress_line {
+  margin-bottom: 30px;
+}
+section .form_conteiner .form_action .progress_line .progress {
+  width: 100%;
+}
+section .form_conteiner .form_action .btn {
+  width: 175px;
+  height: 52px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+section .form_conteiner .image_block {
+  width: 48%;
+  height: 400px;
+  position: relative;
+  margin-top: 19px;
+}
+section .form_conteiner .image_block .image {
+  max-width: 750px;
+  height: 320px;
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+section .form_conteiner .image_block .image img {
+  height: 100%;
+}
+section .form_conteiner .image_block .btn {
+  width: 175px;
+  height: 52px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}

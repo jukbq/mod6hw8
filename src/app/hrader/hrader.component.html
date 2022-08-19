@@ -1,0 +1,90 @@
+<header>
+
+    <!--------------------Логотип---------------------->
+    <div class="logo" [routerLink]="[ '/home' ]">
+        <img src="/assets/icon/logo.svg" class="img-fluid" alt="" srcset="">
+    </div>
+
+
+    <!--------------------Горизонтальне меню--------------------->
+    <div class="menu">
+        <ul class="nav">
+            <li class="nav-item border_animation">
+                <a class="nav-link" [routerLink]="[ '/action' ]">
+                    <img src="/assets/icon/action.svg" lass="img-fluid" alt="" srcset=""> Акції
+                </a>
+            </li>
+            <li class="nav-item border_animation">
+                <a class="nav-link" [routerLink]="[ '/roles' ]">
+                    <img src="/assets/icon/roly.svg" lass="img-fluid" alt="" srcset=""> Роли
+                </a>
+            </li>
+            <li class="nav-item border_animation">
+                <a class="nav-link" [routerLink]="[ '/sets' ]">
+                    <img src="/assets/icon/sets.svg" lass="img-fluid" alt="" srcset=""> Сети
+                </a>
+            </li>
+            <li class="nav-item border_animation">
+                <a class="nav-link" [routerLink]="[ '/drinks' ]">
+                    <img src="/assets/icon/drinks.svg" lass="img-fluid" alt="" srcset=""> Напої
+                </a>
+            </li>
+            <li class="nav-item border_animation">
+                <a class="nav-link" [routerLink]="[ '/sauces' ]">
+                    <img src="/assets/icon/sous.svg" lass="img-fluid" alt="" srcset=""> Соуси
+                </a>
+            </li>
+        </ul>
+
+        <!--------------------Бургер  меню--------------------->
+
+        <div class="wrap_menu border_animation" (click)="activeClass=!activeClass;">
+            <button type="button" [ngClass]="{'active': !activeClass}" class="btn
+                menu_icon" data-bs-toggle="dropdown" aria-expanded="false">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </button>
+            <ul class="nav burger_menu" [ngClass]="{'activeBurgher':
+                !activeClass}">
+                <li class="nav-item ">
+                    <a class="nav-link" [routerLink]="[ '/delivery' ]">Доставка та оплата</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" [routerLink]="[ '/about-us' ]">Про нас</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" [routerLink]="[ '/action']">Акції</a>
+                </li>
+            </ul>
+        </div>
+
+        <!--------------------ЗВоротній зв`зок--------------------->
+
+        <button class=" call_back ">
+            <img src="/assets/icon/phone.svg " lass="img-fluid " alt=" " srcset=" ">
+      <span>МИ ЗАТЕЛЕФОНУЄМО</span>
+        </button>
+
+
+        <!----------------КОнтакти---------------------------->
+
+        <div class="kontact_ibfo ">
+            <a class="header-phone " href="tel:0978780837 ">(097) 878 08 37</a>
+            <div class="header-work-time ">Працюємо з <b>11:00</b> до <b>21:30</b></div>
+        </div>
+
+        <!----------Вхід користувача------------------------------->
+
+        <div class="header_user border_animation " [routerLink]="[ '/admin' ]">
+            <img src="/assets/icon/user.svg " lass="img-fluid " alt=" " srcset=" ">
+        </div>
+    </div>
+
+
+    <!-----------------Кошик--------------------------->
+    <div class="header_basket ">
+        <img src="/assets/icon/basket.svg " lass="img-fluid " alt=" " srcset=" ">
+    </div>
+
+</header>

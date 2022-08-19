@@ -1,0 +1,45 @@
+section {
+  width: 100vw;
+  height: auto;
+  display: flex;
+  justify-content: left;
+  margin-top: 170px;
+}
+section .admin_menu {
+  width: 15%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  list-style: none;
+  text-align: center;
+  transition: 0.35s;
+}
+section .admin_menu li {
+  width: 90%;
+  border: 1px solid #dcdcdc;
+  border-left: none;
+  margin-top: -1px;
+  position: relative;
+}
+section .admin_menu li.active {
+  border-right: none;
+}
+section .admin_menu li.active::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: -1px;
+  width: 100%;
+  height: 4px;
+  background: #b5d8f7;
+}
+section .admin_menu li a {
+  position: relative;
+  display: inline-block;
+  font-size: 16px;
+  padding: 17px 10px;
+  transition: 0.35s;
+  font-weight: normal;
+}

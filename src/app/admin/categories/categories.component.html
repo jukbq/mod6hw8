@@ -1,0 +1,65 @@
+<section>
+
+
+    <button (click)="active_form= !active_form" class="btn " data-rel="address" type="button">ДОДАТИ КАТЕГОРІЮ</button>
+    <table [ngClass]="{'active': active_form}" class="table">
+        <thead>
+            <tr>
+
+                <th scope="col">№</th>
+                <th scope="col">Назва</th>
+                <th scope="col">Шлях</th>
+                <th scope="col">Картинка</th>
+                <th scope="col">Дії</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let categ of category; let i = index">
+                <td> {{i + 1}}</td>
+                <td>{{ categ.titel }}</td>
+                <td>{{ categ.link }}</td>
+                <td class="image">
+                    <img [src]="categ.images">
+                </td>
+                <td class="btn_tr">
+                    <a (click)="editCategory(categ)" type="button">Редагувати</a>
+                    <a (click)="delCAtegory(categ)" type="button">Видалити</a></td>
+            </tr>
+
+        </tbody>
+    </table>
+
+
+    <div class="form_conteiner" [ngClass]="{'active': !active_form}">
+        <form [formGroup]="categoryForn" (ngSubmit)="creatCategory()" class="form_action">
+            <div class="top_input">
+                <input formControlName="titel" type="text" name="titel" class="form-control" placeholder="*Назва" aria-label="Назва">
+                <input formControlName="link" type="text" name="link" class="form-control" placeholder="*Щлях" aria-label="Заголовок">
+            </div>
+
+            <div class="load_file">
+                <input class="form-control form-control-lg" type="file" (change)="upload($event)">
+            </div>
+
+            <div class="progress_line">
+                <div class="progress">
+                    <div class="progress-bar progress-bar-striped" role="progressbar" aria-label="Default striped example" [style.width.%]="uploadPercent" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+            </div>
+
+            <button [disabled]="categoryForn.invalid" type="submit" class="btn">
+            {{ edit_status ? 'Зберегти' : 'ДОадати'}}
+        </button>
+        </form>
+
+        <div class="image_block">
+            <td class="image">
+                <img [src]="valueByControl('images')">
+            </td>
+            <button (click)="deleteImage()" type="submit" class="btn">
+                Видалити
+            </button>
+        </div>
+    </div>
+
+</section>
