@@ -33,6 +33,7 @@ section .delivery {
   width: 60%;
   height: 200px;
   display: flex;
+  z-index: -1;
 }
 section .delivery .delivery_zone {
   position: relative;
